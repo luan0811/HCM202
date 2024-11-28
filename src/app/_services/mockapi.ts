@@ -10,7 +10,7 @@ interface Comment {
 
 const getAllComment = async (): Promise<Comment[]> => {
   try {
-    const response = await axios.get<Comment[]>(BASE_URL);
+    const response = await axios.get<Comment[]>(BASE_URL+'?sortBy=-id');
     return response.data;
   } catch (error) {
     console.error("Error fetching comments:", error);

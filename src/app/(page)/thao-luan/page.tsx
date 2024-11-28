@@ -8,9 +8,19 @@ const ThaoLuan: React.FC = () => {
   const [content, setContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null);
+  const POLLING_INTERVAL = 1000; // 5 giây polling một lần
+  const MAX_CONTENT_LENGTH = 200;
 
   useEffect(() => {
     fetchComments();
+    
+    // Tạo interval để poll comments
+    const intervalId = setInterval(() => {
+      fetchComments();
+    }, POLLING_INTERVAL);
+
+    // Cleanup khi component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const fetchComments = async () => {
@@ -20,6 +30,10 @@ const ThaoLuan: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (content.length > MAX_CONTENT_LENGTH) {
+      setNotification({ type: 'error', message: 'Nội dung bình luận không được vượt quá 200 ký tự!' });
+      return;
+    }
     if (name && content && !isSubmitting) {
       setIsSubmitting(true);
       try {
@@ -86,13 +100,16 @@ const ThaoLuan: React.FC = () => {
               />
             </div>
             <div>
-              <label htmlFor="content" className="block mb-1 text-gray-700">Nội dung:</label>
+              <label htmlFor="content" className="block mb-1 text-gray-700">
+                Nội dung: <span className="text-sm text-gray-500">({content.length}/{MAX_CONTENT_LENGTH} ký tự)</span>
+              </label>
               <textarea
                 id="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 className="w-full px-3 py-2 border rounded text-gray-800"
                 rows={4}
+                maxLength={MAX_CONTENT_LENGTH}
                 required
               ></textarea>
             </div>
