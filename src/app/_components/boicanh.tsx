@@ -47,18 +47,39 @@ const BoiCanh: React.FC = () => {
                     <h2 className="text-3xl font-roboto mb-6 text-gray-800">Về tham nhũng</h2>
                     <div className="prose prose-lg max-w-none font-roboto">
                         <p className="text-gray-600 leading-relaxed">
-                            Tham nhũng là hành vi lợi dụng quyền hành để gây phiền hà, khó khăn và lấy của dân. 
-                            Cùng với tham nhũng là tham ô là hành vi lợi dụng quyền hành để lấy cắp của công. 
-                            Tham nhũng và tham ô là một hệ quả tất yếu của nền kinh tế kém phát triển, quản lý 
-                            kinh tế - xã hội lỏng lẻo tạo ra nhiều sơ hở cho các hành vi tiêu cực, hiện tượng 
-                            tham nhũng và các tệ nạn có điều kiện phát triển và tại đó một phần quyền lực 
+                            Tham nhũng là hành vi lợi dụng quyền hành để gây phiền hà, khó khăn và lấy của dân.
+                            Cùng với tham nhũng là tham ô là hành vi lợi dụng quyền hành để lấy cắp của công.
+                            Tham nhũng và tham ô là một hệ quả tất yếu của nền kinh tế kém phát triển, quản lý
+                            kinh tế - xã hội lỏng lẻo tạo ra nhiều sơ hở cho các hành vi tiêu cực, hiện tượng
+                            tham nhũng và các tệ nạn có điều kiện phát triển và tại đó một phần quyền lực
                             chính trị được biến thành quyền lực kinh tế.
                         </p>
                         <p className="text-gray-600 leading-relaxed mt-4">
-                            Tham nhũng và tham ô làm chậm sự phát triển kinh tế - xã hội, làm giảm lòng tin 
-                            của công dân vào nhà nước và đến chừng mực nào đó nó gây mất ổn định chính trị, 
+                            Tham nhũng và tham ô làm chậm sự phát triển kinh tế - xã hội, làm giảm lòng tin
+                            của công dân vào nhà nước và đến chừng mực nào đó nó gây mất ổn định chính trị,
                             kinh tế - xã hội.
                         </p>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                >
+                    <h2 className="text-3xl font-roboto mb-6 text-gray-800">Về tư tưởng của Chủ tịch Hồ Chí Minh</h2>
+                    <div className="prose prose-lg max-w-none font-roboto">
+                        <p className="text-gray-600 leading-relaxed">
+                            Theo tư tưởng của Chủ tịch Hồ Chí Minh, để Đảng luôn trong sạch,
+                            vững mạnh, xây phải đi liền với chống, phải đấu tranh, ngăn chặn,
+                            đẩy lùi những nguy cơ dẫn đến sự suy yếu của Đảng,
+                            trong đó có nạn tham ô, tham nhũng thứ giặc nội xâm,
+                            giặc ở trong lòng “ngấm ngầm ngăn trở,
+                            ngấm ngầm phá hoại sự nghiệp xây dựng của cách mạng”.
+                        </p>
+
                     </div>
                 </motion.div>
 
@@ -100,13 +121,13 @@ const BoiCanh: React.FC = () => {
                     <h2 className="text-3xl font-roboto mb-6 text-gray-800">Ý nghĩa tổng quát</h2>
                     <div className="prose prose-lg max-w-none font-roboto">
                         <p className="text-gray-600 leading-relaxed">
-                            Phát biểu của Đại biểu Dương Trung Quốc không chỉ là lời cảnh báo về nguy cơ 
-                            tham nhũng mà còn là một lời kêu gọi Đảng cần thực sự gương mẫu, trong sạch 
-                            và quyết liệt trong cuộc chiến chống tham nhũng để bảo vệ niềm tin của nhân dân, 
+                            Phát biểu của Đại biểu Dương Trung Quốc không chỉ là lời cảnh báo về nguy cơ
+                            tham nhũng mà còn là một lời kêu gọi Đảng cần thực sự gương mẫu, trong sạch
+                            và quyết liệt trong cuộc chiến chống tham nhũng để bảo vệ niềm tin của nhân dân,
                             giữ vững vai trò lãnh đạo và bảo vệ chế độ.
                         </p>
                         <p className="text-gray-600 leading-relaxed">
-                            Nó mang ý nghĩa lịch sử, khẳng định rằng chống tham nhũng không chỉ là nhiệm vụ 
+                            Nó mang ý nghĩa lịch sử, khẳng định rằng chống tham nhũng không chỉ là nhiệm vụ
                             chính trị mà còn là bài kiểm tra về sự tồn vong của Đảng và Nhà nước.
                         </p>
                     </div>
